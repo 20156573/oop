@@ -1,0 +1,42 @@
+import sys
+from sys import argv
+from sys import exit
+
+print("Usage: python dna.py data.csv sequence.txt")
+exit(1)
+
+class MoiQuanHe:
+    counter = 1
+    def __init__(self, nd1, nd2, tinh_trang):
+        self.id = MoiQuanHe.counter
+        MoiQuanHe.counter += 1
+        self.nd1 = nd1
+        self.nd2 = nd2
+        self.tinh_trang = tinh_trang 
+
+    # def them_quan_he(self, nd1, nd2, tinh_trang):
+    #     self.nd1 = nd1
+    #     self.nd2 = nd2
+    #     self.tinh_trang = tinh_trang
+
+    def in_mqh(self):
+        return f'{self.nd1} {self.tinh_trang} {self.nd2}'
+
+class NguoiDung:
+    nguoi_dung_id = 1
+    def __init__(self, ten):
+        self.ten = ten
+        self.nguoi_dung_id = NguoiDung.nguoi_dung_id
+        self.ds_ban_be = []
+        self.ds_chan = []
+        NguoiDung.nguoi_dung_id += 1
+def main():
+    nd1 = NguoiDung('Thuy')
+    nd2 = NguoiDung('Duc')
+    nd3 = NguoiDung('Hang')
+    mqh1 = MoiQuanHe(nd1, nd2, 1)
+    mqh1 = MoiQuanHe(nd1, nd2, 0)
+    print(mqh1.in_mqh())
+    
+if __name__=="__main__":
+    main()
